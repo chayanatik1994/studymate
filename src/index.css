@@ -1,2 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
+
 @plugin "daisyui";
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: #6b21a8;  
+  --color-secondary: #14b8a6; 
+  --color-neutral: #000000;   
+  --color-base-100: #ffffff;   
+}
+
+* {
+    font-family: "Roboto", sans-serif;
+}
