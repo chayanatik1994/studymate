@@ -2,14 +2,15 @@ import { createBrowserRouter } from "react-router";
 import HomeLayout from "../layouts/Homelayout";
 import Home from "../Pages/Home";
 import PageNotFound from "../Pages/PageNotFound";
-
+import FindPartners from "../Pages/FindPartners";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomeLayout></HomeLayout>,
-    children : [
-        { path: "/", element: <Home /> }
+    element: <HomeLayout />,
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "/find-partners", element: <FindPartners /> }
     ]
   },
   {
@@ -17,12 +18,8 @@ const router = createBrowserRouter([
     element: <h2>Authentication Layout</h2>,
   },
   {
-    path: "/find-partners",
-    element: <h2>Find Partners Layout</h2>,
-  },
-  {
     path: "/*",
-    element: <PageNotFound></PageNotFound>,
+    element: <PageNotFound />,
   },
 ]);
 
