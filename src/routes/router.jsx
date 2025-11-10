@@ -3,6 +3,7 @@ import HomeLayout from "../layouts/Homelayout";
 import Home from "../Pages/Home";
 import PageNotFound from "../Pages/PageNotFound";
 import FindPartners from "../Pages/FindPartners";
+import PartnerDetails from "../Pages/PartnerDetails";
 
 const router = createBrowserRouter([
   {
@@ -10,7 +11,8 @@ const router = createBrowserRouter([
     element: <HomeLayout />,
     children: [
       { path: "/", element: <Home /> },
-      { path: "/find-partners", element: <FindPartners /> }
+      { path: "/find-partners", element: <FindPartners /> },
+      { path: "/partner/:id", element: <PartnerDetails /> }
     ]
   },
   {
