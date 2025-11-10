@@ -21,7 +21,7 @@ const FindPartners = ({ user = true }) => {
 
   return (
     <div className="p-6">
-        <h2 className="text-2xl font-bold mb-4">Find Your Study Partners</h2>
+        <h2 className="text-2xl font-bold mb-6">Find Your Study Partners</h2>
 
       <input
         type="text"
