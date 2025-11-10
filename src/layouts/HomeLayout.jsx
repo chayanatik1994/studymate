@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 
 const HomeLayout = () => {
   return (
-    <div className="flex flex-col min-h-screen gap-1">
+    <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1 w-full">
         <Outlet />
