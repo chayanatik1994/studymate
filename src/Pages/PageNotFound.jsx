@@ -3,11 +3,11 @@ import PageNotFoundImage from "../assets/PageNotFound.jpg";
 
 const PageNotFound = () => {
   return (
-     <section className="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-4">
+     <section className="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-6">
       <img
         src={PageNotFoundImage}
           alt="Page not found illustration"
-           className="w-full max-w-md mb-8 object-contain"
+              className="w-full max-w-md mb-8 object-contain"
         loading="lazy"
       />
       <h1 className="text-3xl font-semibold text-gray-800 mb-3">
