@@ -5,16 +5,13 @@ import Footer from '../components/Footer';
 
 const HomeLayout = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex flex-col min-h-screen gap-1">
       <Header />
-      
-      <main className="flex-1 w-full px-4 md:px-8 lg:px-16 py-6">
+      <main className="flex-1 w-full">
         <Outlet />
       </main>
-
-      <footer>
-       <Footer></Footer>
-      </footer>
+      
+      <Footer />
     </div>
   );
 };
