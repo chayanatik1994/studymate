@@ -1,9 +1,13 @@
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, Navigate } from "react-router";
 import HomeLayout from "../layouts/Homelayout";
 import Home from "../Pages/Home";
 import PageNotFound from "../Pages/PageNotFound";
 import FindPartners from "../Pages/FindPartners";
 import PartnerDetails from "../Pages/PartnerDetails";
+import Login from "../Pages/Login";
+
+import Auth from "../Pages/Auth"; 
+import Register from "../Pages/Register";
 
 const router = createBrowserRouter([
   {
@@ -11,16 +15,22 @@ const router = createBrowserRouter([
     element: <HomeLayout />,
     children: [
       { path: "/", element: <Home /> },
-      { path: "/find-partners", element: <FindPartners /> },
-      { path: "/partner/:id", element: <PartnerDetails /> }
-    ]
+      { path: "find-partners", element: <FindPartners /> },
+      { path: "partner/:id", element: <PartnerDetails /> },
+    ],
   },
   {
     path: "/auth",
-    element: <h2>Authentication Layout</h2>,
+    element: <Auth />, 
+    children: [
+      { index: true, element: <Navigate to="login" replace /> },
+      { path: "login", element: <Login /> },
+      { path: "register", element: <Register></Register> }
+
+    ],
   },
   {
-    path: "/*",
+    path: "*",
     element: <PageNotFound />,
   },
 ]);

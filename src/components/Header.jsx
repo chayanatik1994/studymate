@@ -93,7 +93,7 @@ const Header = ({ isLoggedIn, user, onLogout }) => {
                 Login
                </NavLink>
               <NavLink
-                to="/auth"
+                to="/auth/register"
                 className="btn bg-teal-500 text-white w-24 md:w-32 hover:bg-teal-600 rounded-md shadow"
               >
                 Register

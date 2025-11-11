@@ -1,25 +1,16 @@
 import { Link } from "react-router";
-import PageNotFoundImage from "../assets/PageNotFound.jpg";
+import PageNot from "../assets/PageNot.jpg";
 
 const PageNotFound = () => {
   return (
-     <section className="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-6">
-      <img
-        src={PageNotFoundImage}
-          alt="Page not found illustration"
-              className="w-full max-w-md mb-8 object-contain"
-        loading="lazy"
-      />
-      <h1 className="text-3xl font-semibold text-gray-800 mb-3">
-        404 — Page Not Found
-      </h1>
-      <p className="text-gray-600 mb-8 text-center max-w-md">
-        The page you’re looking for doesn’t exist or has been moved.  
-          Please return to the home page.
-      </p>
+    <section
+      className="flex flex-col justify-between items-center min-h-screen px-6 bg-cover bg-center"
+      style={{ backgroundImage: `url(${PageNot})` }}
+    >
+      <div></div>
       <Link
         to="/"
-          className="bg-green-600 text-white px-6 py-3 rounded-lg shadow hover:bg-green-700 transition-all duration-200"
+        className="mb-12 bg-purple-600 text-white text-xl px-10 py-4 rounded-lg shadow-lg hover:bg-purple-700 transition-all duration-200"
       >
         Go Back Home
       </Link>
