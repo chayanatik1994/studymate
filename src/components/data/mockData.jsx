@@ -12,6 +12,7 @@ export const topStudyPartners = [
     rating: 4.5,
     partnerCount: 0,
     email: "aisha.rahman@dhaka.edu.bd",
+    role: "Student"
   },
   {
     id: "2",
@@ -26,13 +27,14 @@ export const topStudyPartners = [
     rating: 4.8,
     partnerCount: 0,
     email: "bilal.khan@karachi.edu.pk",
+    role: "Student"
   },
   {
     id: "3",
     name: "Sofia Lee",
     profileImage: "https://i.ibb.co/nW2c1QR/pexels-george-dolgikh-551816-1310461.jpg",
-    subject: "Chemistry",
-    skills: ["Organic Chemistry", "Analytical Chemistry", "Lab Techniques"],
+    subject: "Python",
+    skills: ["Data Science", "Machine Learning", "Flask"],
     studyMode: "Online",
     availabilityTime: "Afternoon 2–5 PM",
     location: "Kuala Lumpur, Malaysia",
@@ -40,13 +42,14 @@ export const topStudyPartners = [
     rating: 4.7,
     partnerCount: 0,
     email: "sofia.lee@kl.edu.my",
+    role: "Student"
   },
   {
     id: "4",
     name: "Ahmed Ali",
     profileImage: "https://i.ibb.co/YBRzfhzq/pexels-olly-3779445.jpg",
-    subject: "Physics",
-    skills: ["Mechanics", "Optics", "Electromagnetism"],
+    subject: "Node.js",
+    skills: ["Express", "MongoDB", "REST APIs"],
     studyMode: "Offline",
     availabilityTime: "Evening 5–8 PM",
     location: "Lahore, Pakistan",
@@ -54,13 +57,14 @@ export const topStudyPartners = [
     rating: 4.6,
     partnerCount: 0,
     email: "ahmed.ali@lahore.edu.pk",
+    role: "Student"
   },
   {
     id: "5",
     name: "Maya Tan",
     profileImage: "https://i.ibb.co/xqdHzWzH/pexels-tamhoang139-1007066.jpg",
-    subject: "English",
-    skills: ["Grammar", "Creative Writing", "Public Speaking"],
+    subject: "HTML & CSS",
+    skills: ["Responsive Design", "Flexbox", "CSS Grid"],
     studyMode: "Online",
     availabilityTime: "Morning 9–12 AM",
     location: "Singapore",
@@ -68,13 +72,14 @@ export const topStudyPartners = [
     rating: 4.9,
     partnerCount: 0,
     email: "maya.tan@singapore.edu.sg",
+    role: "Student"
   },
   {
     id: "6",
     name: "LuqMaan Hassan",
     profileImage: "https://i.ibb.co/v4dy0Vkr/pexels-vantha-thang-1224068-2513993.jpg",
-    subject: "Biology",
-    skills: ["Genetics", "Cell Biology", "Anatomy"],
+    subject: "Java",
+    skills: ["OOP", "Spring Boot", "Maven"],
     studyMode: "Offline",
     availabilityTime: "Afternoon 1–4 PM",
     location: "Mumbai, India",
@@ -82,13 +87,14 @@ export const topStudyPartners = [
     rating: 4.4,
     partnerCount: 0,
     email: "luqmaan.hassan@mumbai.edu.in",
+    role: "Student"
   },
   {
     id: "7",
     name: "Lina Wu",
     profileImage: "https://i.ibb.co/zhcL46mp/pexels-olly-3781529.jpg",
-    subject: "Mathematics",
-    skills: ["Algebra", "Calculus", "Statistics"],
+    subject: "C++",
+    skills: ["Algorithms", "Data Structures", "STL"],
     studyMode: "Online",
     availabilityTime: "Evening 6–9 PM",
     location: "Beijing, China",
@@ -96,13 +102,14 @@ export const topStudyPartners = [
     rating: 4.7,
     partnerCount: 0,
     email: "lina.wu@beijing.edu.cn",
+    role: "Student"
   },
   {
     id: "8",
     name: "David Kim",
     profileImage: "https://i.ibb.co/hqzR0Tq/pexels-marta-klement-636760-1438081.jpg",
-    subject: "Computer Science",
-    skills: ["Algorithms", "Data Structures", "Python"],
+    subject: "Python & Django",
+    skills: ["Django", "REST Framework", "PostgreSQL"],
     studyMode: "Offline",
     availabilityTime: "Morning 8–11 AM",
     location: "Seoul, South Korea",
@@ -110,13 +117,14 @@ export const topStudyPartners = [
     rating: 4.8,
     partnerCount: 0,
     email: "david.kim@seoul.ac.kr",
+    role: "Student"
   },
   {
     id: "9",
     name: "Sara Lim",
     profileImage: "https://i.ibb.co/XkdRbytM/pexels-tima-miroshnichenko-6913213.jpg",
-    subject: "History",
-    skills: ["World History", "Modern History", "Research Skills"],
+    subject: "React Native",
+    skills: ["Mobile Apps", "Expo", "Hooks"],
     studyMode: "Online",
     availabilityTime: "Afternoon 2–5 PM",
     location: "Kuala Lumpur, Malaysia",
@@ -124,13 +132,14 @@ export const topStudyPartners = [
     rating: 4.5,
     partnerCount: 0,
     email: "sara.lim@kl.edu.my",
+    role: "Student"
   },
   {
     id: "10",
     name: "Fariha Khan",
     profileImage: "https://i.ibb.co/XkdRbytM/pexels-tima-miroshnichenko-6913213.jpg",
-    subject: "Economics",
-    skills: ["Microeconomics", "Macroeconomics", "Econometrics"],
+    subject: "MongoDB",
+    skills: ["NoSQL", "Aggregation", "Indexes"],
     studyMode: "Offline",
     availabilityTime: "Evening 5–8 PM",
     location: "Cairo, Egypt",
@@ -138,13 +147,14 @@ export const topStudyPartners = [
     rating: 4.6,
     partnerCount: 0,
     email: "fariha.khan@cairo.edu.eg",
+    role: "Student"
   },
   {
     id: "11",
     name: "Hannah Smith",
     profileImage: "https://i.ibb.co/3DZhcqJ/pexels-olly-3793238.jpg",
-    subject: "Philosophy",
-    skills: ["Ethics", "Logic", "Metaphysics"],
+    subject: "TypeScript",
+    skills: ["TS Basics", "Interfaces", "Generics"],
     studyMode: "Online",
     availabilityTime: "Morning 9–12 AM",
     location: "London, UK",
@@ -152,13 +162,14 @@ export const topStudyPartners = [
     rating: 4.9,
     partnerCount: 0,
     email: "hannah.smith@london.ac.uk",
+    role: "Student"
   },
   {
     id: "12",
     name: "Carlos Rivera",
     profileImage: "https://i.ibb.co/RpnHK5PD/pexels-yankrukov-8199559.jpg",
-    subject: "Spanish",
-    skills: ["Grammar", "Conversation", "Literature"],
+    subject: "Full-Stack MERN",
+    skills: ["MongoDB", "Express", "React", "Node.js"],
     studyMode: "Offline",
     availabilityTime: "Afternoon 1–4 PM",
     location: "Madrid, Spain",
@@ -166,5 +177,6 @@ export const topStudyPartners = [
     rating: 4.3,
     partnerCount: 0,
     email: "carlos.rivera@madrid.edu.es",
+    role: "Student"
   }
 ];

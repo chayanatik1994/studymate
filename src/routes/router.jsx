@@ -7,9 +7,12 @@ import PartnerDetails from "../Pages/PartnerDetails";
 import Login from "../Pages/Login";
 import Auth from "../Pages/Auth"; 
 import Register from "../Pages/Register";
+
 import Connections from "../Pages/Connections";
 import CreateProfile from "../Pages/CreateProfile";
+import Profile from "../Pages/Profile"; 
 import PrivateRoute from "../components/PrivateRoute";
+import ForgotPassword from "../components/ForgetPassword";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +21,8 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "find-partners", element: <FindPartners /> },
+
+      // Protected Routes
       { 
         path: "partner/:id", 
         element: (
@@ -26,8 +31,30 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
-      { path: "connections", element: <Connections /> },
-      { path: "create-profile", element: <CreateProfile /> },
+      { 
+        path: "connections", 
+        element: (
+          <PrivateRoute>
+            <Connections />
+          </PrivateRoute>
+        ),
+      },
+      { 
+        path: "create-profile", 
+        element: (
+          <PrivateRoute>
+            <CreateProfile />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "profile",
+        element: (
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        ),
+      },
     ],
   },
   {
@@ -37,17 +64,9 @@ const router = createBrowserRouter([
       { index: true, element: <Navigate to="login" replace /> },
       { path: "login", element: <Login /> },
       { path: "register", element: <Register /> },
+      { path: "forgot-password", element: <ForgotPassword /> }, 
     ],
   },
-  { 
-  path: "partner/:id", 
-  element: (
-    <PrivateRoute>
-      <PartnerDetails />
-    </PrivateRoute>
-  ),
-},
-
   {
     path: "*",
     element: <PageNotFound />,
@@ -55,3 +74,4 @@ const router = createBrowserRouter([
 ]);
 
 export default router;
+

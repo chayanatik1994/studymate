@@ -9,14 +9,14 @@ const Footer = () => {
         {/* Logo & Description */}
         <div className="flex flex-col md:flex-1 gap-4">
           <div className="flex items-center gap-2">
-              <img src={Logo} alt="StudyMate Logo" className="w-12 h-12 rounded-full" />
-            <span className="text-xl font-bold">StudyMate</span>
+               <img src={Logo} alt="StudyMate Logo" className="w-12 h-12 rounded-full" />
+             <span className="text-xl font-bold">StudyMate</span>
           </div>
             <p className="text-sm text-gray-300">
             StudyMate is a MERN Stack platform connecting students for effective learning collaboration. 
           </p>
           < div className="flex gap-4 mt-3">
-            <a href="https://facebook.com" className="hover:text-blue-600">Facebook</a>
+             <a href="https://facebook.com" className="hover:text-blue-600">Facebook</a>
               <a href="https://x.com" className="hover:text-blue-400">X</a>
             <a href="https://instagram.com" className="hover:text-pink-500">Instagram</a>
               <a href="https://linkedin.com" className="hover:text-blue-700">LinkedIn</a>
@@ -25,9 +25,9 @@ const Footer = () => {
 
         {/* Navigation Links */}
         <div className="flex flex-wrap gap-10 md:flex-1 justify-between">
-          <nav className="flex flex-col gap-2">
+           <nav className="flex flex-col gap-2">
             <h6 className="text-white font-semibold mb-2">Services</h6>
-             <a className="link link-hover">Branding</a>
+              <a className="link link-hover">Branding</a>
               <a className="link link-hover">Design</a>
               <a className="link link-hover">Marketing</a>
              <a className="link link-hover">Advertisement</a>
