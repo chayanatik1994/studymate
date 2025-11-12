@@ -28,7 +28,7 @@ const Connections = () => {
 
   return (
     <div className="p-6 max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold mb-6 text-center text-purple-700">My Connections</h2>
+        <h2 className="text-3xl font-bold mb-6 text-center text-purple-800">My Connections</h2>
       {connections.length === 0 ? (
         <p className="text-gray-600 text-center">No connections yet.</p>
       ) : (
