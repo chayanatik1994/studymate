@@ -43,8 +43,8 @@ const Register = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-cover bg-center" style={{ backgroundImage: `url(${bgImage})` }}>
-      <div className="shadow-2xl rounded-3xl p-10 w-full max-w-md bg-white bg-opacity-90 backdrop-blur-md">
-          <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">Create Account</h2>
+      <div className="shadow-2xl rounded-3xl p-10 w-full max-w-md bg-white bg-opacity-91 backdrop-blur-md">
+          <h2 className="text-3xl font-bold text-center text-gray-800 mb-">Create Account</h2>
         {photo && (
           <div className="flex justify-center mb-4">
               <img src={photo} alt="Profile Preview" className="w-20 h-20 rounded-full shadow-md border border-gray-300" />
