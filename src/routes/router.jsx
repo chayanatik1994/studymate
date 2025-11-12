@@ -5,9 +5,11 @@ import PageNotFound from "../Pages/PageNotFound";
 import FindPartners from "../Pages/FindPartners";
 import PartnerDetails from "../Pages/PartnerDetails";
 import Login from "../Pages/Login";
-
 import Auth from "../Pages/Auth"; 
 import Register from "../Pages/Register";
+import Connections from "../Pages/Connections";
+import CreateProfile from "../Pages/CreateProfile";
+import PrivateRoute from "../components/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -16,19 +18,36 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "find-partners", element: <FindPartners /> },
-      { path: "partner/:id", element: <PartnerDetails /> },
+      { 
+        path: "partner/:id", 
+        element: (
+          <PrivateRoute>
+            <PartnerDetails />
+          </PrivateRoute>
+        ),
+      },
+      { path: "connections", element: <Connections /> },
+      { path: "create-profile", element: <CreateProfile /> },
     ],
   },
   {
     path: "/auth",
-    element: <Auth />, 
+    element: <Auth />,
     children: [
       { index: true, element: <Navigate to="login" replace /> },
       { path: "login", element: <Login /> },
-      { path: "register", element: <Register></Register> }
-
+      { path: "register", element: <Register /> },
     ],
   },
+  { 
+  path: "partner/:id", 
+  element: (
+    <PrivateRoute>
+      <PartnerDetails />
+    </PrivateRoute>
+  ),
+},
+
   {
     path: "*",
     element: <PageNotFound />,

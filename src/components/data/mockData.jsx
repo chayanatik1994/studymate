@@ -11,7 +11,7 @@ export const topStudyPartners = [
     experienceLevel: "Intermediate",
     rating: 4.5,
     partnerCount: 0,
-    email: "aisha.rahman@example.com",
+    email: "aisha.rahman@dhaka.edu.bd",
   },
   {
     id: "2",
@@ -25,7 +25,7 @@ export const topStudyPartners = [
     experienceLevel: "Expert",
     rating: 4.8,
     partnerCount: 0,
-    email: "bilal.khan@example.com",
+    email: "bilal.khan@karachi.edu.pk",
   },
   {
     id: "3",
@@ -39,7 +39,7 @@ export const topStudyPartners = [
     experienceLevel: "Beginner",
     rating: 4.7,
     partnerCount: 0,
-    email: "sofia.lee@example.com",
+    email: "sofia.lee@kl.edu.my",
   },
   {
     id: "4",
@@ -53,7 +53,7 @@ export const topStudyPartners = [
     experienceLevel: "Intermediate",
     rating: 4.6,
     partnerCount: 0,
-    email: "ahmed.ali@example.com",
+    email: "ahmed.ali@lahore.edu.pk",
   },
   {
     id: "5",
@@ -67,7 +67,7 @@ export const topStudyPartners = [
     experienceLevel: "Expert",
     rating: 4.9,
     partnerCount: 0,
-    email: "maya.tan@example.com",
+    email: "maya.tan@singapore.edu.sg",
   },
   {
     id: "6",
@@ -81,7 +81,7 @@ export const topStudyPartners = [
     experienceLevel: "Beginner",
     rating: 4.4,
     partnerCount: 0,
-    email: "luqmaan.hassan@example.com",
+    email: "luqmaan.hassan@mumbai.edu.in",
   },
   {
     id: "7",
@@ -95,7 +95,7 @@ export const topStudyPartners = [
     experienceLevel: "Intermediate",
     rating: 4.7,
     partnerCount: 0,
-    email: "lina.wu@example.com",
+    email: "lina.wu@beijing.edu.cn",
   },
   {
     id: "8",
@@ -109,7 +109,7 @@ export const topStudyPartners = [
     experienceLevel: "Expert",
     rating: 4.8,
     partnerCount: 0,
-    email: "david.kim@example.com",
+    email: "david.kim@seoul.ac.kr",
   },
   {
     id: "9",
@@ -123,7 +123,7 @@ export const topStudyPartners = [
     experienceLevel: "Beginner",
     rating: 4.5,
     partnerCount: 0,
-    email: "sara.lim@example.com",
+    email: "sara.lim@kl.edu.my",
   },
   {
     id: "10",
@@ -137,7 +137,7 @@ export const topStudyPartners = [
     experienceLevel: "Intermediate",
     rating: 4.6,
     partnerCount: 0,
-    email: "fariha.khan@example.com",
+    email: "fariha.khan@cairo.edu.eg",
   },
   {
     id: "11",
@@ -151,7 +151,7 @@ export const topStudyPartners = [
     experienceLevel: "Expert",
     rating: 4.9,
     partnerCount: 0,
-    email: "hannah.smith@example.com",
+    email: "hannah.smith@london.ac.uk",
   },
   {
     id: "12",
@@ -165,6 +165,6 @@ export const topStudyPartners = [
     experienceLevel: "Beginner",
     rating: 4.3,
     partnerCount: 0,
-    email: "carlos.rivera@example.com",
+    email: "carlos.rivera@madrid.edu.es",
   }
 ];

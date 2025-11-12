@@ -9,10 +9,9 @@ const FindPartners = ({ user = true }) => {
 
   // Filter and sort partners
   const filteredAndSorted = topStudyPartners
-     .filter((p) => p.subject.toLowerCase().includes(search.toLowerCase()))
+      .filter((p) => p.subject.toLowerCase().includes(search.toLowerCase()))
       .sort((a, b) => a.experienceLevel.localeCompare(b.experienceLevel));
 
-  // Pagination
   const totalPages = Math.ceil(filteredAndSorted.length / partnersPerPage);
   const currentPartners = filteredAndSorted.slice(
       (currentPage - 1) * partnersPerPage,
@@ -25,7 +24,7 @@ const FindPartners = ({ user = true }) => {
 
       <input
         type="text"
-         placeholder="Search by subject..."
+           placeholder="Search by subject..."
          value={search}
         onChange={(e) => {
           setSearch(e.target.value);
@@ -35,7 +34,7 @@ const FindPartners = ({ user = true }) => {
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {currentPartners.map((partner) => (
+         {currentPartners.map((partner) => (
           <StudyPartnerCard key={partner.id} partner={partner} user={user} />
         ))}
       </div>
@@ -46,7 +45,7 @@ const FindPartners = ({ user = true }) => {
             <button
               key={i}
                 onClick={() => setCurrentPage(i + 1)}
-               className={`px-3 py-1 rounded ${
+                 className={`px-3 py-1 rounded ${
                 currentPage === i + 1 ? "bg-purple-700 text-white" : "bg-gray-200"
               }`}
             >
