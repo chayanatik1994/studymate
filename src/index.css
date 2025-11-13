@@ -16,3 +16,18 @@
 * {
     font-family: "Roboto", sans-serif;
 }
+
+/* text  visible */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea,
+select {
+    color: #111827; 
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #6b7280; 
+}

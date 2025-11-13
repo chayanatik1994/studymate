@@ -1,5 +1,5 @@
 import { createBrowserRouter, Navigate } from "react-router";
-import HomeLayout from "../layouts/Homelayout";
+import HomeLayout from "../layouts/HomeLayout";
 import Home from "../Pages/Home";
 import PageNotFound from "../Pages/PageNotFound";
 import FindPartners from "../Pages/FindPartners";

@@ -2,10 +2,13 @@ import React, { useState, useContext } from 'react';
 import { NavLink, useNavigate } from 'react-router';
 import Logo from '../assets/connecting.png';
 import { AuthContext } from '../provider/AuthProvider';
+import { ThemeContext } from '../provider/ThemeProvider';
+import { FaMoon, FaSun } from 'react-icons/fa';
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { user, logOut, loading } = useContext(AuthContext);
+  const { theme, toggleTheme } = useContext(ThemeContext);
   const navigate = useNavigate();
   const isLoggedIn = !!user;
 
@@ -38,6 +41,23 @@ const Header = () => {
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
+          {/* Theme Toggle */}
+          <button
+            onClick={toggleTheme}
+            className="btn btn-ghost btn-circle"
+            aria-label="Toggle theme"
+          >
+            {theme === 'light' ? (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            )}
+          </button>
+
           {!loading && (
             isLoggedIn ? (
               <div className="dropdown dropdown-end">
@@ -71,6 +91,15 @@ const Header = () => {
 
       {menuOpen && (
         <div className="md:hidden bg-purple-600 w-full px-4 py-2 flex flex-col gap-2 text-center">
+          <button
+            onClick={toggleTheme}
+            className="px-2 py-2 rounded hover:bg-purple-800 transition flex items-center justify-center gap-2"
+          >
+           <button onClick={toggleTheme}>
+        {theme === 'light' ? <FaMoon /> : <FaSun />}
+        {theme === 'light' ? ' Dark Mode' : ' Light Mode'}
+      </button>
+          </button>
           <NavLink to="/" className="px-2 py-2 rounded hover:bg-purple-800 transition" onClick={() => setMenuOpen(false)}>Home</NavLink>
           <NavLink to="/find-partners" className="px-2 py-2 rounded hover:bg-purple-800 transition" onClick={() => setMenuOpen(false)}>Find Partners</NavLink>
           {!loading && (

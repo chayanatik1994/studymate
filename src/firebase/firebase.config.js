@@ -2,7 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
-// Your web app's Firebase configuration
+// Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyABJu1gID03TEFCKCyE9PnPgdz7uQqflqI",
   authDomain: "study-mate-server.firebaseapp.com",

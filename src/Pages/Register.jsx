@@ -33,7 +33,7 @@ const Register = () => {
         photo || "https://via.placeholder.com/40"
       );
 
-      toast.success("Account created successfully!");
+      toast.success("Account created Perfect!");
 
       setTimeout(() => {
           navigate("/auth/login", { replace: true });

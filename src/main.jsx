@@ -8,15 +8,18 @@ import router from './routes/router.jsx';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AuthProvider from './provider/AuthProvider.jsx';
+import ThemeProvider from './provider/ThemeProvider.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <AuthProvider>
-      <>
-        <RouterProvider router={router} />
-        <ToastContainer position="top-right" autoClose={3000} />
-      </>
-    </AuthProvider>
+    <ThemeProvider>
+      <AuthProvider>
+        <>
+          <RouterProvider router={router} />
+          <ToastContainer position="top-right" autoClose={3000} />
+        </>
+      </AuthProvider>
+    </ThemeProvider>
   </StrictMode>
 );
 
