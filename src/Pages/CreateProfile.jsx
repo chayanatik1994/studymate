@@ -105,7 +105,7 @@ const CreateProfile = () => {
             <input
               type="text"
               name="subject"
-               placeholder="e.g., Mathematics, English, Programming"
+               placeholder="Mathematics, English, Programming"
               value={formData.subject}
                onChange={handleChange}
               required
@@ -132,7 +132,7 @@ const CreateProfile = () => {
             <input
               type="text"
               name="availabilityTime"
-                placeholder="e.g., Evening 6-9 PM"
+                placeholder="Evening 6-9 PM"
               value={formData.availabilityTime}
                onChange={handleChange}
               required
