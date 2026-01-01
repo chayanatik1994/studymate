@@ -4,7 +4,7 @@ A modern, full-stack web application for students to organize, track, and enhanc
 
 ## 🌐 Live Site
 
-**Client:** [StudyMate Client](http://localhost:5173)  
+**Client:** [StudyMate Client](tubular-kelpie-ddfff1.netlify.app)  
 **Server:** [StudyMate Server](https://studymate-crud-server-eudme5cl5-sm-atikur-rahmans-projects.vercel.app)
 
 
