@@ -64,28 +64,6 @@ bash
 Copy code
 cd ../studymate-client
 npm install
-Environment Variables
-Server (.env)
-
-ini
-Copy code
-PORT=3000
-DB_USER=your_mongodb_username
-DB_PASS=your_mongodb_password
-JWT_SECRET=your_jwt_secret
-Client (.env)
-
-ini
-Copy code
-VITE_FIREBASE_API_KEY=your_firebase_api_key
-VITE_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
-VITE_FIREBASE_PROJECT_ID=your_firebase_project_id
-VITE_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
-VITE_FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
-VITE_FIREBASE_APP_ID=your_firebase_app_id
-Run the Application
-bash
-Copy code
 # Terminal 1 - Server
 cd studymate-server
 npm start
@@ -138,7 +116,7 @@ Monitor platform analytics
 🔒 Security Features
 JWT-based authentication for all routes
 
-Role-based access control (Student, Teacher, Admin)
+Role-based access control (Student, Admin)
 
 Protected routes with authentication persistence
 
