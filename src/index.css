@@ -3,14 +3,13 @@
 
 @plugin "daisyui";
 
-
 @plugin "daisyui/theme" {
   name: "light";
   default: true;
-  --color-primary: #6b21a8;  
-  --color-secondary: #14b8a6; 
-  --color-neutral: #000000;   
-  --color-base-100: #ffffff;   
+  "primary": "#0000FF";    /* Pure blue */
+  "secondary": "#14b8a6";  /* Teal */
+  "neutral": "#000000";     /* Black text */
+  "base-100": "#ffffff";    /* White background */
 }
 
 * {

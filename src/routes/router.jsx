@@ -4,15 +4,15 @@ import Home from "../Pages/Home";
 import PageNotFound from "../Pages/PageNotFound";
 import FindPartners from "../Pages/FindPartners";
 import PartnerDetails from "../Pages/PartnerDetails";
-import Login from "../Pages/Login";
 import Auth from "../Pages/Auth"; 
 import Register from "../Pages/Register";
-
 import Connections from "../Pages/Connections";
 import CreateProfile from "../Pages/CreateProfile";
 import Profile from "../Pages/Profile"; 
 import PrivateRoute from "../components/PrivateRoute";
 import ForgotPassword from "../components/ForgetPassword";
+import AboutSection from "../Pages/AboutSection";
+import Login from "../Pages/Login";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +21,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/", element: <Home /> },
       { path: "find-partners", element: <FindPartners /> },
+      { path: "about-us", element: <AboutSection /> },
 
       // Protected Routes
       { 
@@ -62,9 +63,9 @@ const router = createBrowserRouter([
     element: <Auth />,
     children: [
       { index: true, element: <Navigate to="login" replace /> },
-      { path: "login", element: <Login /> },
+      { path: "login", element: <Login/> },
       { path: "register", element: <Register /> },
-      { path: "forgot-password", element: <ForgotPassword /> }, 
+      { path: "forgot-password", element: <ForgotPassword /> },
     ],
   },
   {
@@ -74,4 +75,3 @@ const router = createBrowserRouter([
 ]);
 
 export default router;
-

@@ -1,139 +1,147 @@
 import { useParams, useNavigate } from "react-router";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useCallback } from "react";
 import { getPartnerById, sendPartnerRequest } from "../utils/api";
 import { AuthContext } from "../provider/AuthProvider";
 import { toast } from "react-toastify";
 import Spinner from "../components/Spinner";
+import {
+  FaStar,
+  FaMapMarkerAlt,
+  FaUserGraduate,
+  FaClock,
+  FaBook,
+} from "react-icons/fa";
 
 const PartnerDetails = () => {
   const { id } = useParams();
   const { user } = useContext(AuthContext);
-    const navigate = useNavigate();
-  const [partner, setPartner] = useState(null);
-    const [loading, setLoading] = useState(true);
-  const [sendingRequest, setSendingRequest] = useState(false);
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    if (id && id !== 'undefined') {
-      fetchPartner();
-    } else {
+  const [partner, setPartner] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [sending, setSending] = useState(false);
+
+  const fetchPartner = useCallback(async () => {
+    try {
+      setLoading(true);
+      const res = await getPartnerById(id);
+      setPartner(res?.data ?? null);
+    } catch {
+      toast.error("Failed to load partner details");
+    } finally {
       setLoading(false);
-      toast.error("Invalid partner ID");
     }
   }, [id]);
 
-  const fetchPartner = async () => {
-    if (!id || id === 'undefined') {
-      toast.error("Invalid partner ID");
-      return;
-    }
-    
-    setLoading(true);
-    try {
-      const response = await getPartnerById(id);
-       setPartner(response.data);
-    } catch (error) {
-      console.error("Error fetching partner:", error);
-        toast.error(error.response?.data?.message || "Failed to load partner details");
-    } finally {
-      setLoading(false);
-    }
-  };
+  useEffect(() => {
+    if (id) fetchPartner();
+  }, [id, fetchPartner]);
 
-  const handleSendRequest = async () => {
+  const image =
+    partner?.profileImage ||
+    partner?.profileimage ||
+    "/placeholder.jpg";
+
+  const handleRequest = async () => {
     if (!user) {
-      toast.error("Please login to send a partner request");
+      toast.error("Login required");
       navigate("/auth");
       return;
     }
-
-    setSendingRequest(true);
     try {
+      setSending(true);
       await sendPartnerRequest(id, user.email);
-      toast.success("Partner request sent successfully!");
-      // Refresh partner data to show updated partnerCount
+      toast.success("Partner request sent");
       fetchPartner();
-    } catch (error) {
-      console.error("Error sending request:", error);
-      toast.error(error.response?.data?.message || "Failed to send partner request");
+    } catch {
+      toast.error("Request failed");
     } finally {
-      setSendingRequest(false);
+      setSending(false);
     }
   };
 
   if (loading) return <Spinner />;
-  if (!partner) return <p className="text-center mt-20 text-lg">Partner not found.</p>;
+  if (!partner)
+    return <p className="text-center mt-20">Partner not found</p>;
 
   return (
-    <div className="flex justify-center items-start min-h-screen bg-gradient-to-br from-purple-100 via-white to-purple-50 pt-20 px-4 pb-8">
-      <div className="bg-white shadow-2xl rounded-3xl max-w-2xl w-full p-8 border border-purple-100">
-        <div className="flex flex-col items-center mb-6">
-          <img
-            src={partner.profileimage || partner.profileImage || "https://cdn-icons-png.flaticon.com/512/847/847969.png"}
-            alt={partner.name}
-            className="w-32 h-32 rounded-full object-cover border-4 border-purple-500 mb-4 shadow-lg"
-          />
-          <h2 className="text-3xl font-extrabold text-gray-800 mb-2">{partner.name}</h2>
-          <p className="text-gray-600 text-lg">{partner.subject}</p>
-          {partner.rating > 0 && (
-            <div className="flex items-center gap-1 mt-2">
-              <span className="text-yellow-500 text-xl">★</span>
-              <span className="text-gray-700 font-semibold">{partner.rating}</span>
-            </div>
-          )}
-        </div>
+    <main className="max-w-7xl mx-auto px-4 py-14 space-y-14">
+      <section className="grid md:grid-cols-2 gap-10">
+        <img
+          src={image}
+          alt={partner.name}
+          className="w-full h-[380px] object-cover rounded-2xl border"
+        />
 
-        <div className="space-y-4 mb-6">
-          <div className="bg-purple-50 rounded-lg p-4">
-            <p className="text-sm text-gray-600 mb-1">Experience Level</p>
-              <p className="text-lg font-semibold text-purple-700">{partner.experienceLevel}</p>
+        <div className="space-y-6">
+          <h1 className="text-4xl font-extrabold text-gray-800">
+            {partner.name}
+          </h1>
+
+          <p className="text-lg text-gray-600">
+            {partner.subject} • {partner.experienceLevel}
+          </p>
+
+          <div className="flex flex-wrap items-center gap-4 text-sm">
+            <span className="flex items-center gap-1">
+              <FaStar className="text-yellow-500" />
+              <strong>{partner.rating ?? "N/A"}</strong>
+            </span>
+            <span>{partner.partnerCount ?? 0} connections</span>
+            <span className="flex items-center gap-1">
+              <FaMapMarkerAlt />
+              {partner.location ?? "—"}
+            </span>
           </div>
 
-          <div className="bg-purple-50 rounded-lg p-4">
-              <p className="text-sm text-gray-600 mb-1">Study Mode</p>
-            <p className="text-lg font-semibold text-purple-700">{partner.studyMode}</p>
-          </div>
-
-          <div className="bg-purple-50 rounded-lg p-4">
-            <p className="text-sm text-gray-600 mb-1">Availability</p>
-              <p className="text-lg font-semibold text-purple-700">{partner.availabilityTime}</p>
-          </div>
-
-          <div className="bg-purple-50 rounded-lg p-4">
-              <p className="text-sm text-gray-600 mb-1">Location</p>
-            <p className="text-lg font-semibold text-purple-700">{partner.location}</p>
-          </div>
-
-          <div className="bg-purple-50 rounded-lg p-4">
-             <p className="text-sm text-gray-600 mb-1">Partner Count / Connections</p>
-            <p className="text-lg font-semibold text-purple-700">{partner.partnerCount || 0}</p>
-          </div>
-
-          <div className="bg-gray-50 rounded-lg p-4">
-            <p className="text-sm text-gray-600 mb-1">Email</p>
-            <p className="text-lg font-semibold text-gray-700">{partner.email}</p>
-          </div>
-        </div>
-
-        {user ? (
           <button
-            onClick={handleSendRequest}
-             disabled={sendingRequest}
-            className="w-full py-3 bg-gradient-to-r from-purple-600 to-purple-500 text-white font-semibold rounded-xl hover:opacity-90 transition-all duration-200 shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+            onClick={handleRequest}
+            disabled={sending}
+            className="px-8 py-3 rounded-xl bg-purple-600 text-white font-semibold hover:bg-purple-700 disabled:opacity-50"
           >
-            {sendingRequest ? "Sending Request..." : "Send Partner Request"}
+            {sending ? "Sending..." : "Send Partner Request"}
           </button>
-        ) : (
-          <button
-             onClick={() => navigate("/auth")}
-            className="w-full py-3 bg-gradient-to-r from-purple-600 to-purple-500 text-white font-semibold rounded-xl hover:opacity-90 transition-all duration-200 shadow-md"
-          >
-            Login to Send Request
-          </button>
-        )}
-      </div>
-    </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-2xl font-bold mb-4">Overview</h2>
+        <p className="text-gray-700 leading-relaxed max-w-3xl">
+          {partner.name} is a {partner.experienceLevel} learner specializing in{" "}
+          {partner.subject}. Available for {partner.studyMode} study sessions
+          during {partner.availabilityTime}.
+        </p>
+      </section>
+
+      <section className="grid md:grid-cols-3 gap-6">
+        <InfoCard
+          icon={<FaUserGraduate />}
+          title="Study Mode"
+          value={partner.studyMode ?? "—"}
+        />
+        <InfoCard
+          icon={<FaClock />}
+          title="Availability"
+          value={partner.availabilityTime ?? "—"}
+        />
+        <InfoCard
+          icon={<FaBook />}
+          title="Skills"
+          value={partner.skills?.join(", ") || "N/A"}
+        />
+      </section>
+    </main>
   );
 };
+
+const InfoCard = ({ icon, title, value }) => (
+  <div className="bg-white border rounded-xl p-5 flex gap-4">
+    <div className="text-purple-600 text-xl">{icon}</div>
+    <div>
+      <p className="text-sm text-gray-500">{title}</p>
+      <p className="font-semibold">{value}</p>
+    </div>
+  </div>
+);
 
 export default PartnerDetails;

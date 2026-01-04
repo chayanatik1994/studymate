@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "name": "Aisha Rahman",
+    "profileImage": "https://i.ibb.co/BKnfj2xK/portrait-volunteer-who-organized-donations-charity.jpg",
+    "subject": "JavaScript",
+    "skills": ["ES6", "React", "Node.js"],
+    "studyMode": "Online",
+    "availabilityTime": "Evening 6–9 PM",
+    "location": "Dhaka, Bangladesh",
+    "experienceLevel": "Intermediate",
+    "rating": 4.5,
+    "partnerCount": 0,
+    "email": "aisha.rahman@dhaka.edu.bd",
+    "role": "Student"
+  },
+  {
+    "id": "2",
+    "name": "Bilal Khan",
+    "profileImage": "https://i.ibb.co/Xrnp8s7d/pexels-kartik-307184443-14180701.jpg",
+    "subject": "React",
+    "skills": ["React Hooks", "Redux", "TypeScript"],
+    "studyMode": "Offline",
+    "availabilityTime": "Morning 8–11 AM",
+    "location": "Karachi, Pakistan",
+    "experienceLevel": "Expert",
+    "rating": 4.8,
+    "partnerCount": 0,
+    "email": "bilal.khan@karachi.edu.pk",
+    "role": "Student"
+  },
+  {
+    "id": "3",
+    "name": "Sofia Lee",
+    "profileImage": "https://i.ibb.co/nW2c1QR/pexels-george-dolgikh-551816-1310461.jpg",
+    "subject": "Python",
+    "skills": ["Data Science", "Machine Learning", "Flask"],
+    "studyMode": "Online",
+    "availabilityTime": "Afternoon 2–5 PM",
+    "location": "Kuala Lumpur, Malaysia",
+    "experienceLevel": "Beginner",
+    "rating": 4.7,
+    "partnerCount": 0,
+    "email": "sofia.lee@kl.edu.my",
+    "role": "Student"
+  }
+]
